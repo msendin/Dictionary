@@ -14,7 +14,7 @@ import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class EmptyDictionaryTest implements EmptyDictionaryInterfaceTest {
+class EmptyDictionaryTest implements EmptyDictionaryInterfaceTest {
 
     private DictionaryImpl dictionary;
 

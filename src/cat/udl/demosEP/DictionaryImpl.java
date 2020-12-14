@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class DictionaryImpl implements Dictionary {
+class DictionaryImpl implements Dictionary {
 
     private HashMap<String,List<String>> entriesList;
 
