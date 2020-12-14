@@ -1,3 +1,3 @@
 # Dictionary
 Problem 1 from ProblemasPruebasUnitarias Collection. 
-Simple *Receipt* class with corresponding test classes
+Simple *Dictionary* class (each word can contain different definitions) with corresponding test classes
