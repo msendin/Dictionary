@@ -9,8 +9,6 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -34,8 +32,19 @@ class EmptyDictionaryTest implements EmptyDictionaryInterfaceTest {
 
     @Override
     @Test
+    public void defineWordMultiDTest() throws AlreadyDefinedException, NotDefinedException {
+        List<String> defs = new ArrayList<>();
+        dictionary.defineWord("Sistema Operativo", "Definición 1 de Sistema Operativo");
+        dictionary.defineWord("Sistema Operativo", "Definición 2 de Sistema Operativo");
+        defs.add("Definición 1 de Sistema Operativo");
+        defs.add("Definición 2 de Sistema Operativo");
+        assertEquals(defs, dictionary.getDefinitions("Sistema Operativo"));
+    }
+
+    @Override
+    @Test
     public void getInexistentWordTest() {
-        Throwable exception = assertThrows(NotDefinedException.class,
+        assertThrows(NotDefinedException.class,
                 () -> dictionary.getDefinitions("Middleware"));
     }
 }

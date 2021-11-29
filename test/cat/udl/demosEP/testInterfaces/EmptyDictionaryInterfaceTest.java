@@ -15,4 +15,7 @@ public interface EmptyDictionaryInterfaceTest {
 
     @Test
     void defineWordTest() throws AlreadyDefinedException, NotDefinedException;
+
+    @Test
+    void defineWordMultiDTest() throws AlreadyDefinedException, NotDefinedException;
 }

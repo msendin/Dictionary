@@ -14,5 +14,5 @@ public interface DictionaryInterfaceTest {
     void getExistentWordTest();
 
     @Test
-    void getOneDefinitionTest() throws NotDefinedException;
+    void defineWordExistentTest() throws AlreadyDefinedException, NotDefinedException;
 }

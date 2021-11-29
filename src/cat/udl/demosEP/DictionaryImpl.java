@@ -10,7 +10,6 @@ class DictionaryImpl implements Dictionary {
 
     private HashMap<String,List<String>> entriesList;
 
-
     DictionaryImpl() {
         entriesList = new HashMap<>();
     }

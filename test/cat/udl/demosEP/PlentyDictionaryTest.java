@@ -23,7 +23,7 @@ class PlentyDictionaryTest implements EmptyDictionaryInterfaceTest, DictionaryIn
     @BeforeEach
     void setUp() throws AlreadyDefinedException {
         dictionary = new DictionaryImpl();
-        dictionary.defineWord("Hardware", "Definición de Hardware");
+        dictionary.defineWord("Hardware", "Definición 1 de Hardware");
         dictionary.defineWord("Software", "Definición de Software");
         dictionary.defineWord("Licencia", "Definición 1 de Licencia");
         dictionary.defineWord("Licencia", "Definición 2 de Licencia");
@@ -32,7 +32,7 @@ class PlentyDictionaryTest implements EmptyDictionaryInterfaceTest, DictionaryIn
     @Override
     @Test
     public void getInexistentWordTest() {
-        Throwable exception = assertThrows(NotDefinedException.class,
+        assertThrows(NotDefinedException.class,
                 () -> dictionary.getDefinitions("Middleware"));
     }
 
@@ -47,26 +47,32 @@ class PlentyDictionaryTest implements EmptyDictionaryInterfaceTest, DictionaryIn
 
     @Override
     @Test
-    public void getExistentWordTest() {
-        assertThrows(AlreadyDefinedException.class,
-                () -> dictionary.defineWord("Hardware", "Definición de Hardware"));
+    public void defineWordMultiDTest() throws AlreadyDefinedException, NotDefinedException {
+        List<String> defs = new ArrayList<>();
+        dictionary.defineWord("Sistema Operativo", "Definición 1 de Sistema Operativo");
+        dictionary.defineWord("Sistema Operativo", "Definición 2 de Sistema Operativo");
+        defs.add("Definición 1 de Sistema Operativo");
+        defs.add("Definición 2 de Sistema Operativo");
+        assertEquals(defs, dictionary.getDefinitions("Sistema Operativo"));
     }
 
     @Override
     @Test
-    public void getOneDefinitionTest() throws NotDefinedException {
+    public void getExistentWordTest() {
+        assertThrows(AlreadyDefinedException.class,
+                () -> dictionary.defineWord("Hardware", "Definición 1 de Hardware"));
+    }
+
+    @Override
+    @Test
+    public void defineWordExistentTest() throws AlreadyDefinedException, NotDefinedException {
         List<String> definitions = new ArrayList<>();
-        definitions.add("Definición de Hardware");
+        definitions.add("Definición 1 de Hardware");
+        definitions.add("Definición 2 de Hardware");
+        dictionary.defineWord("Hardware", "Definición 2 de Hardware");
         assertEquals(definitions, dictionary.getDefinitions("Hardware"));
     }
 
-    @Test
-    void getMoreThanOneDefinitionTest() throws NotDefinedException{
-        List<String> definitions = new ArrayList<>();
-        definitions.add("Definición 1 de Licencia");
-        definitions.add("Definición 2 de Licencia");
-        assertEquals(definitions, dictionary.getDefinitions("Licencia"));
-    }
 
     @Test
     void groupedAssertions() {
