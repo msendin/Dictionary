@@ -19,7 +19,7 @@ class OneWordDictionaryTest implements EmptyDictionaryInterfaceTest, DictionaryI
     private DictionaryImpl dictionary;
 
     @BeforeEach
-    void setUp() throws AlreadyDefinedException {
+    public void setUp() throws AlreadyDefinedException {
         dictionary = new DictionaryImpl();
         dictionary.defineWord("Hardware", "Definición 1 de Hardware");
     }

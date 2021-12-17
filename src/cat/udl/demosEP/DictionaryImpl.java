@@ -6,11 +6,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-class DictionaryImpl implements Dictionary {
+public class DictionaryImpl implements Dictionary {
 
     private HashMap<String,List<String>> entriesList;
 
-    DictionaryImpl() {
+    public DictionaryImpl() {
         entriesList = new HashMap<>();
     }
 

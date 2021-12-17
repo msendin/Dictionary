@@ -21,7 +21,7 @@ class PlentyDictionaryTest implements EmptyDictionaryInterfaceTest, DictionaryIn
     private DictionaryImpl dictionary;
 
     @BeforeEach
-    void setUp() throws AlreadyDefinedException {
+    public void setUp() throws AlreadyDefinedException {
         dictionary = new DictionaryImpl();
         dictionary.defineWord("Hardware", "Definición 1 de Hardware");
         dictionary.defineWord("Software", "Definición de Software");
@@ -73,7 +73,7 @@ class PlentyDictionaryTest implements EmptyDictionaryInterfaceTest, DictionaryIn
         assertEquals(definitions, dictionary.getDefinitions("Hardware"));
     }
 
-
+/*
     @Test
     void groupedAssertions() {
         assertAll("definiciones de Licencia y más",
@@ -82,4 +82,6 @@ class PlentyDictionaryTest implements EmptyDictionaryInterfaceTest, DictionaryIn
                 () -> assertThat("comparació valor 8 amb assertThat", 4+4, equalTo(8))
         );
     }
+ */
+
 }
