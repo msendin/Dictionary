@@ -12,10 +12,13 @@ public interface EmptyDictionaryInterfaceTest {
 
     @Test
     void getInexistentWordTest();
+    // Checks if the NotDefinedException throws adequately
 
     @Test
     void defineWordTest() throws AlreadyDefinedException, NotDefinedException;
+    // Adds a new word to the Dictionary
 
     @Test
     void defineWordMultiDTest() throws AlreadyDefinedException, NotDefinedException;
+    // Adds a new word in the Dictionary, which has two definitions
 }

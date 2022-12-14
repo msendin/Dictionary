@@ -16,7 +16,9 @@ public interface DictionaryInterfaceTest {
 
     @Test
     void getExistentWordTest();
+    // Checks if the AlreadyDefinedException throws adequately
 
     @Test
     void defineWordExistentTest() throws AlreadyDefinedException, NotDefinedException;
+    // Adds another definition to a word already existent in the DIctionary
 }

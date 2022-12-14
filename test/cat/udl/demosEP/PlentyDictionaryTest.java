@@ -5,6 +5,7 @@ import cat.udl.demosEP.exceptions.NotDefinedException;
 import cat.udl.demosEP.testInterfaces.DictionaryInterfaceTest;
 import cat.udl.demosEP.testInterfaces.EmptyDictionaryInterfaceTest;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -73,8 +74,9 @@ class PlentyDictionaryTest implements EmptyDictionaryInterfaceTest, DictionaryIn
         assertEquals(definitions, dictionary.getDefinitions("Hardware"));
     }
 
-/*
+
     @Test
+    @DisplayName("demo assertAll")
     void groupedAssertions() {
         assertAll("definiciones de Licencia y más",
                 () -> assertEquals("Definición 1 de Licencia", dictionary.getDefinitions("Licencia").get(0)),
@@ -82,6 +84,6 @@ class PlentyDictionaryTest implements EmptyDictionaryInterfaceTest, DictionaryIn
                 () -> assertThat("comparació valor 8 amb assertThat", 4+4, equalTo(8))
         );
     }
- */
+
 
 }
