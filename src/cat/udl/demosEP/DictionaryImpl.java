@@ -24,7 +24,6 @@ public class DictionaryImpl implements Dictionary {
                 throw new AlreadyDefinedException("Definición ya existente");
             else {
                 defL.add(definition);
-                entriesList.put(word, defL);
             }
         } else {
             defL = new ArrayList<>();
